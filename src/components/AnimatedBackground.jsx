@@ -10,7 +10,7 @@ export default function AnimatedBackground() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const stars = Array.from({ length: 150 }, () => ({
+    const stars = Array.from({ length: 800 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       radius: Math.random() * 1.3,

@@ -122,9 +122,11 @@ export default function AnalyzePage() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/analyze", {
+      const res = await fetch("https://brand-reputation-agent-backend-production.up.railway.app/api/analyze", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json",
+          "User-Agent": "Mozilla/5.0"
+         },
         body: JSON.stringify(body),
       });
       const data = await res.json();
@@ -148,7 +150,7 @@ export default function AnalyzePage() {
     setHealthData(null);
     setHealthOpen(true);
     try {
-      const res = await fetch("http://localhost:5000/health");
+      const res = await fetch("https://brand-reputation-agent-backend-production.up.railway.app/health");
       const data = await res.json();
       setHealthData(data);
     } catch (err) {
